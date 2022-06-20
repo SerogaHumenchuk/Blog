@@ -1,0 +1,12 @@
+.cardContainer {
+    margin: 15px;
+}
+.card {
+    width: 320px;
+    height: auto
+}
+.avatarImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%
+}

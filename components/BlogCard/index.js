@@ -1,16 +1,17 @@
 import Link from 'next/link';
-import {Card, CardHeader, CardMedia, Typography, CardContent, Grid} from '@mui/material';
+import {Card, CardHeader, CardMedia, Typography, CardContent} from '@mui/material';
+import styles from '../../styles/BlogCard.module.css'
 
 export const BlogCard = ({title, author, coverPhoto, datePublished, slug, content}) => {
     const {avatar, name} = author;
 
     return (
-        <div style={{margin: 15}}>
-            <Link href={'/psots/' + slug}>
-                <Card sx={{ width: 345, height: 'auto' }}>
+        <div className={styles.cardContainer}>
+            <Link href={'/posts/' + slug}>
+                <Card className={styles.card}>
                     <CardHeader
                         avatar={
-                            <img src={avatar.url} alt="avatar" style={{width: 40, height: 40, borderRadius: '50%'}} />
+                            <img src={avatar.url} alt="avatar" className={styles.avatarImg} />
                         }
                         title={name}
                         subheader={datePublished}
@@ -20,7 +21,7 @@ export const BlogCard = ({title, author, coverPhoto, datePublished, slug, conten
                     </CardContent>
                     <CardMedia
                         component="img"
-                        height="194"
+                        height="200"
                         image={coverPhoto.url}
                         alt="Paella dish"
                     />
